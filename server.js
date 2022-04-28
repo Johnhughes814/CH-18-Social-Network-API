@@ -1,5 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+// require('dotenv').config({
+//   path: require('find-config')('.env')
+// });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -10,8 +13,7 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://<USER_NAME>:<PASSWORD>@<DATABASE>.xzy3k.mongodb.net/<CLUSTER_NAME>?retryWrites=true&w=majority', {
-  useFindAndModify: false,
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://jh814:NEW_USER_PASSWORD@cluster0.8wjwl.mongodb.net/socialapi?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
